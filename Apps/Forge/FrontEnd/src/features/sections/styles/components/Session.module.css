@@ -1,0 +1,137 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+main{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.sessionDuration, .reflection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 20px;
+}
+.sessionDuration{
+    border-right: 1px solid #ccc;
+}
+.components{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.components div{
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+.buttons{
+    margin-top: 20px;
+}
+.buttons button{
+    margin: 0 10px; 
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+}
+.buttons button:hover{
+    background-color: #0056b3;
+}
+.assistantContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.assistantContainer .assistant{
+    width: 100px;
+    height: 100px;
+    background-color: #007bff;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}  
+.reflect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.reflect p{
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    resize: none;
+}
+.reflect button{
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+}
+.reflect button:hover{
+    background-color: #1e7e34;
+}
+
+.logs{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+.logs div{
+    font-size: 16px;
+    color: #555;
+}
+.workLogs{
+    color: #007bff;
+}
+.breakLogs{
+    color: #ffc107;
+}
+.necessaryLogs{
+    color: #dc3545;
+}
+.totalTime{
+    font-weight: bold;
+}
+.totalTime{
+    font-weight: bold;
+}
+  

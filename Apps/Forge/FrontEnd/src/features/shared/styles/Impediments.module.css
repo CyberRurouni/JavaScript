@@ -1,0 +1,24 @@
+.impediments {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.item {
+  color: #ff5555;
+  transition: color 0.2s;
+}
+
+.item:nth-child(2) {
+  color: #ffaa00;
+}
+
+.item:nth-child(3) {
+  color: #55ff55;
+}
+
+.item:hover {
+  color: #fff;
+}

@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Password Locker",
+  "version": "1.0",
+  "description": "Lock specific tabs with a password",
+  "permissions": ["storage", "scripting", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["locker.js"]
+    }
+  ]
+}

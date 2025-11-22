@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centripetal Force Simulation</title>
+    <link rel="stylesheet" href="centripetal.css">
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <!-- <div class="loading-screen" id="loading-screen">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">INITIALIZING SIMULATION</div>
+    </div> -->
+
+    <h1 class="title">CENTRIPETAL FORCE SIMULATION</h1>
+
+    <div class="container" id="simulation-container">
+      <div class="grid-background"></div>
+      <div class="center" id="center"></div>
+      <div class="orbit-path" id="orbit-path"></div>
+      <div class="ball" id="ball"></div>
+      <div class="vector" id="velocity-vector"></div>
+      <div class="vector" id="acceleration-vector"></div>
+
+      <div class="data-display" id="data-display">
+        <h3>REAL-TIME DATA</h3>
+        <div class="data-row">
+          <span class="data-label">Position:</span>
+          <span class="data-value" id="position-value">(0, 0)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Velocity:</span>
+          <span class="data-value" id="velocity-value">0.00 m/s</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Acceleration:</span>
+          <span class="data-value" id="acceleration-value">0.00 m/s²</span>
+        </div>
+        <div class="data-row">
+          <span class="data-label">Force:</span>
+          <span class="data-value" id="force-value">0.00 N</span>
+        </div>
+      </div>
+
+      <div class="equation-display">
+        <div class="equation-title">CENTRIPETAL FORCE</div>
+        <div class="equation">F = m × v²/r</div>
+        <div class="equation-title">CENTRIPETAL ACCELERATION</div>
+        <div class="equation">a = v²/r</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="control-row">
+        <div class="control-group">
+          <label for="radius">ORBIT RADIUS:</label>
+          <input type="range" id="radius" min="50" max="350" value="150"  />
+          <span class="value-display" id="radius-value">150 px</span>
+        </div>
+      </div>
+      <div class="control-row">
+        <div class="control-group">
+          <label for="speed">VELOCITY:</label>
+          <input type="range" id="speed" min="1" max="10" value="5" />
+          <span class="value-display" id="speed-value">5 m/s</span>
+        </div>
+      </div>
+      <div class="control-row">
+        <div class="control-group">
+          <label for="mass">MASS:</label>
+          <input type="range" id="mass" min="1" max="10" value="5" />
+          <span class="value-display" id="mass-value">5 kg</span>
+        </div>
+      </div>
+      <div class="button-group">
+        <button id="start-btn">
+          <span class="btn-icon play-icon"></span> START
+        </button>
+        <button id="pause-btn">
+          <span class="btn-icon pause-icon"></span> PAUSE
+        </button>
+        <button id="reset-btn">
+          <span class="btn-icon reset-icon"></span> RESET
+        </button>
+        <button id="toggle-vectors" class="toggle-btn">SHOW VECTORS</button>
+        <button id="toggle-trail" class="toggle-btn">SHOW TRAIL</button>
+      </div>
+    </div>
+
+    <!-- <script src="centripetal.js"></script> -->
+  </body>
+</html>

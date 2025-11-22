@@ -1,0 +1,37 @@
+.header {
+  background-color: #1a1a1a;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.link a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.link a:hover {
+  color: #fff;
+}
+
+.accomplishments {
+  color: #aaa;
+  font-weight: 500;
+}

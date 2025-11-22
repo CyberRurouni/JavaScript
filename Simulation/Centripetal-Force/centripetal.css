@@ -1,0 +1,635 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: "Montserrat", "Arial", sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: radial-gradient(circle at center, #0c0c1d, #000000);
+}
+
+/* Main Container */
+.container {
+  position: relative;
+  width: 900px;
+  height: 650px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(18, 18, 30, 0.8),
+    rgba(5, 5, 20, 0.95)
+  );
+  box-shadow: 0 0 60px rgba(0, 81, 255, 0.3),
+    0 0 120px rgba(0, 0, 0, 0.5) inset;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(50, 50, 80, 0.3);
+}
+
+/* Grid Background */
+.grid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(30, 30, 60, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(30, 30, 60, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 0;
+}
+
+/* Center Point */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #ffffff, #0046ff);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 25px #0055ff, 0 0 40px #0055ff;
+  z-index: 10;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Center Pulse Animation */
+.center::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 69, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+  100% {
+    width: 300%;
+    height: 300%;
+    opacity: 0;
+  }
+}
+
+/* Orbit Path */
+.orbit-path {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  border: 2px dashed rgba(100, 149, 237, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  box-shadow: 0 0 30px rgba(100, 149, 237, 0.1) inset,
+    0 0 30px rgba(100, 149, 237, 0.1);
+}
+
+/* Ball */
+.ball {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: radial-gradient(circle at 30% 30%, #ff7b7b, #ff0000);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 0, 0, 0.3);
+  z-index: 3;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Ball Inner Glow */
+.ball::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 40%;
+  height: 40%;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+/* Vectors */
+.vector {
+  position: absolute;
+  height: 3px;
+  transform-origin: left center;
+  z-index: 5;
+}
+
+#velocity-vector {
+  background: linear-gradient(
+    to right,
+    rgba(0, 255, 100, 1),
+    rgba(0, 255, 100, 0)
+  );
+  box-shadow: 0 0 10px rgba(0, 255, 100, 0.7);
+}
+
+#acceleration-vector {
+  background: linear-gradient(
+    to right,
+    rgba(255, 0, 255, 1),
+    rgba(255, 0, 255, 0)
+  );
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+}
+
+/* Vector Arrow Tips */
+.vector::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 8px;
+}
+
+#velocity-vector::after {
+  border-color: transparent transparent transparent rgba(0, 255, 100, 1);
+}
+
+#acceleration-vector::after {
+  border-color: transparent transparent transparent rgba(255, 0, 255, 1);
+}
+
+/* Star Background */
+.star {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* Trail */
+.trail {
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: radial-gradient(
+    circle,
+    rgba(255, 100, 100, 0.7),
+    rgba(255, 0, 0, 0)
+  );
+  filter: blur(1px);
+}
+
+/* Title */
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  background: linear-gradient(45deg, #00ffaa, #0080ff, #d400ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(0, 255, 170, 0.3),
+    0 2px 5px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00ffaa,
+    #0080ff,
+    #d400ff,
+    transparent
+  );
+  border-radius: 3px;
+}
+
+/* Data Display */
+.data-display {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 60, 0.8),
+    rgba(20, 20, 40, 0.9)
+  );
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid rgba(100, 100, 200, 0.3);
+  font-family: "Courier New", monospace;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  width: 220px;
+  backdrop-filter: blur(5px);
+  z-index: 100;
+}
+
+.data-display h3 {
+  color: #00ffaa;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(100, 149, 237, 0.2);
+}
+
+.data-label {
+  color: #64afff;
+}
+
+.data-value {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Controls Panel */
+.controls {
+  margin-top: 30px;
+  padding: 25px;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 60, 0.7),
+    rgba(15, 15, 30, 0.8)
+  );
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 900px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 81, 255, 0.2);
+  border: 1px solid rgba(100, 100, 200, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.control-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.control-group {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+label {
+  font-weight: 600;
+  color: #64afff;
+  min-width: 120px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Custom Range Slider */
+input[type="range"] {
+  flex-grow: 1;
+  appearance: none;
+  height: 6px;
+  background: linear-gradient(to right, #0046ff, #00c3ff);
+  border-radius: 10px;
+  outline: none;
+  margin: 0 15px;
+  box-shadow: 0 0 5px rgba(0, 100, 255, 0.5);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #0080ff;
+  box-shadow: 0 0 10px rgba(0, 128, 255, 0.7);
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 128, 255, 0.9);
+}
+
+.value-display {
+  min-width: 70px;
+  text-align: center;
+  font-family: "Courier New", monospace;
+  color: #00ffaa;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px;
+  background: rgba(0, 0, 20, 0.5);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 170, 0.3);
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.2);
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #0064ff, #004db5);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(0, 100, 255, 0.3);
+  border: 1px solid rgba(0, 128, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0080ff, #0064cc);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(0, 100, 255, 0.5);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3),
+    0 0 5px rgba(0, 100, 255, 0.3);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.5s ease;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+#start-btn {
+  background: linear-gradient(135deg, #00aa55, #007733);
+  border-color: rgba(0, 170, 85, 0.5);
+}
+
+#start-btn:hover {
+  background: linear-gradient(135deg, #00cc66, #008844);
+}
+
+#pause-btn {
+  background: linear-gradient(135deg, #ff9900, #cc7700);
+  border-color: rgba(255, 153, 0, 0.5);
+}
+
+#pause-btn:hover {
+  background: linear-gradient(135deg, #ffaa33, #dd8800);
+}
+
+#reset-btn {
+  background: linear-gradient(135deg, #ff3366, #cc2255);
+  border-color: rgba(255, 51, 102, 0.5);
+}
+
+#reset-btn:hover {
+  background: linear-gradient(135deg, #ff4477, #dd3366);
+}
+
+/* Button Icons */
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+}
+
+.play-icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 12px;
+  border-color: transparent transparent transparent #ffffff;
+}
+
+.pause-icon::before,
+.pause-icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+.pause-icon::before {
+  left: 2px;
+}
+
+.pause-icon::after {
+  right: 2px;
+}
+
+.reset-icon {
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+.reset-icon::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 6px;
+  border-color: transparent transparent transparent #ffffff;
+}
+
+/* Toggle Buttons */
+.toggle-btn {
+  background: linear-gradient(135deg, #7755cc, #5533aa);
+  border-color: rgba(119, 85, 204, 0.5);
+}
+
+.toggle-btn:hover {
+  background: linear-gradient(135deg, #8866dd, #6644bb);
+}
+
+/* Footer Info */
+.footer-info {
+  position: absolute;
+  bottom: 15px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 50;
+}
+
+/* Loading Animation */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 1s ease-out;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 100, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #0080ff;
+  animation: spin 1s infinite linear;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  color: #0080ff;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Equation Display */
+.equation-display {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 60, 0.8),
+    rgba(20, 20, 40, 0.9)
+  );
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid rgba(100, 100, 200, 0.3);
+  font-family: "Courier New", monospace;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.equation {
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.equation-title {
+  color: #00ffaa;
+  margin-bottom: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 1000px) {
+  .container,
+  .controls {
+    width: 95%;
+  }
+}
+
+@media (max-height: 900px) {
+  .container {
+    height: 500px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .controls {
+    margin-top: 15px;
+    padding: 15px;
+  }
+}

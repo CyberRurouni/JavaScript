@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pong Game</title>
+    <link rel="stylesheet" href="pong.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="start-screen">
+        <h1>Pong Game</h1>
+        <div class="difficulty-buttons">
+          <button
+            class="difficulty-button"
+            data-difficulty="easy"
+            data-message="Piece of cake"
+          >
+            Easy
+          </button>
+          <button
+            class="difficulty-button"
+            data-difficulty="normal"
+            data-message="Don't get carried away"
+          >
+            Normal
+          </button>
+          <button
+            class="difficulty-button"
+            data-difficulty="hard"
+            data-message="You think you can keep up?"
+          >
+            Hard
+          </button>
+          <button
+            class="difficulty-button"
+            data-difficulty="impossible"
+            data-message="I won't stop you, but you can't win"
+          >
+            Impossible
+          </button>
+        </div>
+        <button class="start-button" disabled>Start Game</button>
+        <div class="winning-points-container">
+          <h2 class="points-title">Victory Points</h2>
+          <div class="slider-container">
+            <div class="slider-track-container">
+              <div class="slider-track"></div>
+              <div class="slider-progress"></div>
+              <div class="slider-ticks"></div>
+            </div>
+            <input
+              type="range"
+              class="win-number"
+              min="1"
+              max="10"
+              value="5"
+            />
+            <div class="value-bubble">
+              <span class="value-text">5</span>
+              <!-- <div class="bubble-trail"></div> -->
+            </div>
+          </div>
+          <p class="game-info">First to 5 points wins!</p>
+        </div>
+      </div>
+      <div class="end-screen">
+        <h2>Game Over</h2>
+        <p class="winner-message"></p>
+        <button class="restart-button">Restart Game</button>
+      </div>
+      <div class="play-guard">
+        <div class="score-board">
+          <div class="score-1">0</div>
+          <div class="score-2">0</div>
+        </div>
+        <div class="paddles">
+          <div class="paddle-left"></div>
+          <div class="paddle-right"></div>
+        </div>
+        <div class="ball"></div>
+      </div>
+    </div>
+    <script src="pong.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Session Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">
+                <span class="icon">⚡</span>
+                Work Session Tracker
+                <span class="icon">⚡</span>
+            </h1>
+            <p class="subtitle">Track your productivity, one session at a time</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tabs">
+            <button class="tab active" data-tab="daily">Daily</button>
+            <button class="tab" data-tab="weekly">Weekly</button>
+            <button class="tab" data-tab="monthly">Monthly</button>
+        </nav>
+
+        <!-- Daily View -->
+        <div id="daily-view" class="view active">
+            <div class="controls">
+                <button id="newDayBtn" class="btn btn-primary">
+                    <span class="btn-icon">🆕</span>
+                    New Day
+                </button>
+                <button id="startSessionBtn" class="btn btn-success" disabled>
+                    <span class="btn-icon">▶️</span>
+                    Start Session
+                </button>
+                <button id="endSessionBtn" class="btn btn-danger" disabled>
+                    <span class="btn-icon">⏹️</span>
+                    End Session
+                </button>
+                <button id="exportDayBtn" class="btn btn-info" disabled>
+                    <span class="btn-icon">📄</span>
+                    Export PDF
+                </button>
+            </div>
+
+            <div id="dayInfo" class="info-card"></div>
+
+            <div id="currentSessionIndicator" class="session-indicator"></div>
+
+            <div class="table-container">
+                <table id="dailyTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Start</th>
+                            <th>End</th>
+                            <th>Topic</th>
+                            <th>Details</th>
+                            <th>Result</th>
+                            <th>Duration</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6" class="total-label">Total Hours Today</td>
+                            <td id="dailyTotal" class="total-value">00:00:00</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <!-- Weekly View -->
+        <div id="weekly-view" class="view">
+            <div class="controls">
+                <button id="newWeekBtn" class="btn btn-primary">
+                    <span class="btn-icon">🆕</span>
+                    New Week
+                </button>
+                <button id="exportWeekBtn" class="btn btn-info" disabled>
+                    <span class="btn-icon">📄</span>
+                    Export PDF
+                </button>
+            </div>
+
+            <div id="weekInfo" class="info-card"></div>
+
+            <div class="table-container">
+                <table id="weeklyTable">
+                    <thead>
+                        <tr>
+                            <th>Day #</th>
+                            <th>Date</th>
+                            <th>Day's Aim</th>
+                            <th>Sessions</th>
+                            <th>Total Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="total-label">Total Hours This Week</td>
+                            <td id="weeklyTotal" class="total-value">00:00:00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <!-- Monthly View -->
+        <div id="monthly-view" class="view">
+            <div class="controls">
+                <button id="newMonthBtn" class="btn btn-primary">
+                    <span class="btn-icon">🆕</span>
+                    New Month
+                </button>
+                <button id="exportMonthBtn" class="btn btn-info" disabled>
+                    <span class="btn-icon">📄</span>
+                    Export PDF
+                </button>
+            </div>
+
+            <div id="monthInfo" class="info-card"></div>
+
+            <div class="table-container">
+                <table id="monthlyTable">
+                    <thead>
+                        <tr>
+                            <th>Week #</th>
+                            <th>Period</th>
+                            <th>Days Worked</th>
+                            <th>Total Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="total-label">Total Hours This Month</td>
+                            <td id="monthlyTotal" class="total-value">00:00:00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
