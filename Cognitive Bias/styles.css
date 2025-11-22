@@ -1,0 +1,263 @@
+.phones {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.phones .product {
+  background-color: #3a3a3a;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.phone {
+  width: 150px;
+  height: 250px;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.luxury-phone,
+.simple-phone {
+  background: linear-gradient(145deg, #ea2fff, #00bfff);
+}
+.luxury-phone {
+  position: relative;
+}
+
+.phones .tag {
+  position: absolute;
+  top: 30px;
+  right: -22px;
+  height: 28px;
+  width: 130px;
+  background-color: #ff6b6b;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.5rem;
+  font-weight: bold;
+  border-radius: 3px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+@keyframes tagPulse {
+  0%,
+  100% {
+    transform: rotate(45deg) scale(1);
+    background-color: #ff6b6b;
+  }
+  50% {
+    transform: rotate(45deg) scale(1.1);
+    background-color: #ff4757;
+  }
+}
+
+.phones .tag-pulse {
+  animation: tagPulse 0.3s ease-in-out;
+}
+
+.phones .notch {
+  width: 100px;
+  height: 30px;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.phones .screen {
+  width: 90%;
+  height: 85%;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.phones .screen i {
+  font-size: 5rem;
+  color: #333;
+}
+
+.phones .button {
+  width: 30px;
+  height: 30px;
+  background-color: #222;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.phones .details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.phones .info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.phones .likes,
+.phones .bought,
+.phones .rating,
+.phones .reviews {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #4a4a4a;
+  padding: 0.5rem;
+  border-radius: 15px;
+  position: relative;
+}
+
+.phones .num {
+  font-weight: bold;
+  color: #e0e0e0;
+  transition: transform 0.3s ease;
+}
+
+.phones .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+  color: #00bfff;
+}
+
+.phones i {
+  font-size: 1.2rem;
+}
+
+.fa-heart {
+  color: #ff1493;
+}
+
+.fa-shopping-cart {
+  color: #4169e1;
+}
+
+.fa-star {
+  color: #ffd700;
+}
+
+.fa-comment {
+  color: #32cd32;
+}
+
+.phones .animation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.phones .animation-icon {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0;
+  transition: none;
+}
+
+@keyframes float-trajectory {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.pulse {
+  animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.pulse {
+  animation: pulse 0.3s ease-in-out;
+}
+.changes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Adjust gap as needed */
+}
+
+.change-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-weight: bold;
+  color: #333; /* Primary text color */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.change-item .old-value,
+.change-item .new-value {
+  margin: 0 1rem; /* Space between values and arrow */
+}
+
+.change-item .arrow {
+  margin: 0 1rem;
+  color: #888; /* Color for the arrow */
+}
+
+.change-item .old-value {
+  color: #ff5f5f; /* Color for old value */
+}
+
+.change-item .new-value {
+  color: #4caf50; /* Color for new value */
+}

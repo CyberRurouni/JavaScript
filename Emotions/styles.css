@@ -1,0 +1,105 @@
+/* Zero Emotions Part */
+.zero-emotions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+}
+.zero-emotions .product {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.zero-emotions .product img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.zero-emotions .cta button {
+  outline: none;
+  border: none;
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+/* Emotional Part */
+.emotions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.emotional-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+.emotional-text {
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.emotional-product {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+}
+#enjoy {
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  animation: pulse 2s infinite;
+}
+#enjoy button {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  color: #fff;
+  /* background-color: #00bfffff; */
+  background-color: #45ca22;
+  font-weight: bold;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* Animations */
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fade-in{
+  animation: fade-in 0.5s ease-in forwards;
+}

@@ -1,0 +1,181 @@
+export default class NLP {
+  bottle(content) {
+    const canOpeningSound =
+      '<audio src="Sound Effects/opening-the-cap-of-a-soda-bottle-191996.mp3" autoplay></audio>';
+    content.innerHTML += canOpeningSound;
+    setTimeout(() => {
+      const milkBottle = `<div class="milk-bottle">
+      <svg viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient
+            id="bottle-gradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="0%"
+          >
+            <stop
+              offset="0%"
+              style="stop-color: rgba(230, 230, 230, 0.8); stop-opacity: 1"
+            />
+            <stop
+              offset="40%"
+              style="stop-color: rgba(255, 255, 255, 0.5); stop-opacity: 1"
+            />
+            <stop
+              offset="60%"
+              style="stop-color: rgba(255, 255, 255, 0.5); stop-opacity: 1"
+            />
+            <stop
+              offset="100%"
+              style="stop-color: rgba(230, 230, 230, 0.8); stop-opacity: 1"
+            />
+          </linearGradient>
+          <filter id="bottle-shadow">
+            <feDropShadow
+              dx="0"
+              dy="10"
+              stdDeviation="5"
+              flood-color="#000"
+              flood-opacity="0.3"
+            />
+          </filter>
+        </defs>
+
+        <!-- Bottle shadow -->
+        <ellipse
+          cx="150"
+          cy="480"
+          rx="70"
+          ry="10"
+          fill="rgba(0,0,0,0.2)"
+          filter="url(#bottle-shadow)"
+        />
+
+        <!-- Bottle shape (including neck) -->
+        <path
+          d="M100,50 Q90,100 90,150 L90,400 Q90,450 150,450 Q210,450 210,400 L210,150 Q210,100 200,50 Q200,20 150,20 Q100,20 100,50 Z"
+          fill="url(#bottle-gradient)"
+          stroke="rgba(255,255,255,0.5)"
+          stroke-width="2"
+          filter="url(#bottle-shadow)"
+        />
+
+        <!-- Cap -->
+        <path
+          d="M125,20 Q125,5 150,5 Q175,5 175,20 L175,30 L125,30 Z"
+          fill="#ff5252"
+          stroke="#d32f2f"
+          stroke-width="2"
+        />
+        <ellipse cx="150" cy="20" rx="25" ry="5" fill="#d32f2f" />
+
+        <!-- Milk level -->
+        <path
+          d="M95,380 Q95,430 150,430 Q205,430 205,380 L205,160 Q150,140 95,160 Z"
+          fill="#fffaf0"
+          opacity="0.9"
+        />
+        <path
+          d="M95,380 Q95,430 150,430 Q205,430 205,380 L205,370 Q150,385 95,370 Z"
+          fill="#fff"
+          opacity="0.4"
+        />
+
+        <!-- Label -->
+        <rect
+          x="105"
+          y="200"
+          width="90"
+          height="140"
+          fill="#1565c0"
+          rx="10"
+          ry="10"
+          opacity="0.9"
+        />
+        <text
+          x="150"
+          y="250"
+          font-family="Arial, sans-serif"
+          font-size="24"
+          fill="white"
+          text-anchor="middle"
+          font-weight="bold"
+        >
+          MILK
+        </text>
+        <text
+          x="150"
+          y="280"
+          font-family="Arial, sans-serif"
+          font-size="12"
+          fill="white"
+          text-anchor="middle"
+        >
+          Fresh &amp; Creamy
+        </text>
+
+        <!-- Nutritional info -->
+        <rect
+          x="110"
+          y="300"
+          width="80"
+          height="30"
+          fill="white"
+          opacity="0.8"
+          rx="5"
+          ry="5"
+        />
+        <text
+          x="150"
+          y="315"
+          font-family="Arial, sans-serif"
+          font-size="8"
+          fill="#333"
+          text-anchor="middle"
+        >
+          Nutrition Facts
+        </text>
+        <text
+          x="150"
+          y="325"
+          font-family="Arial, sans-serif"
+          font-size="6"
+          fill="#333"
+          text-anchor="middle"
+        >
+          Cal 150 | Fat 8g | Carbs 12g
+        </text>
+
+        <!-- Reflections and highlights -->
+        <ellipse cx="180" cy="200" rx="15" ry="80" fill="white" opacity="0.2" />
+        <path
+          d="M100,100 Q110,150 110,200 L115,200 Q115,150 105,100 Z"
+          fill="white"
+          opacity="0.2"
+        />
+        <ellipse cx="150" cy="450" rx="60" ry="10" fill="white" opacity="0.3" />
+
+        <!-- Volume indicator -->
+        <text
+          x="150"
+          y="410"
+          font-family="Arial, sans-serif"
+          font-size="10"
+          fill="#1565c0"
+          text-anchor="middle"
+          font-weight="bold"
+        >
+          1 LITER
+        </text>
+      </svg>
+    </div>`;
+      content.querySelector("audio").remove();
+      content.innerHTML += milkBottle;
+      const container = content.querySelector(".milk-bottle");
+      if (container) {
+        container.classList.add("fade-in");
+      }
+    }, 1000);
+  }
+}

@@ -1,0 +1,72 @@
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.stats-container .facebook,
+.stats-container .coca-cola {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.stats-container .facebook .info,
+.stats-container .coca-cola .info {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon img {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.downloads,
+.revenue {
+  display: flex;
+  flex-direction: column;
+}
+
+.data {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: bold;
+}
+.revenue .data {
+  position: relative;
+}
+.revenue .data::before {
+  content: "$";
+  color: #45ca22;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 0;
+  left: -15px;
+  font-weight: normal;
+}
+
+.platform,
+.annual {
+  margin-top: 5px;
+  color: #777;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.platform img,
+.annual img {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
